@@ -3,33 +3,112 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>For You 💗</title>
+<title>Our Love Scrapbook 💗</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#ffe8f1,#ffc9dc 45%,#fff5f9);color:#5a1432;overflow-x:hidden}.hidden{display:none!important}#lockScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}.glass{width:100%;max-width:440px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.85);border-radius:34px;padding:30px 22px;box-shadow:0 22px 60px rgba(205,40,110,.25);backdrop-filter:blur(16px)}.lock-heart{font-size:64px;animation:pulse 1.7s infinite}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}h1{font-size:2.35rem;margin:10px 0;letter-spacing:-1px}h2{font-size:1.85rem;margin:44px 0 14px}p{line-height:1.65}input{width:100%;padding:15px;margin-top:16px;border:0;border-radius:999px;text-align:center;font-size:1rem;outline:none;background:white;color:#5a1432}button{width:100%;margin-top:14px;border:0;border-radius:999px;padding:15px;background:linear-gradient(135deg,#ff4d8d,#ff85b7);color:white;font-weight:800;font-size:1rem;box-shadow:0 12px 25px rgba(255,77,141,.35);cursor:pointer}#error{min-height:24px;color:#c00046;font-weight:700}main{display:none;max-width:980px;margin:0 auto;padding:22px;position:relative;z-index:2}.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding-top:36px}.badge{display:inline-block;margin:0 auto 14px;padding:9px 16px;background:rgba(255,255,255,.75);border-radius:999px;font-weight:800;box-shadow:0 8px 20px rgba(180,40,95,.12)}.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}.timebox{background:rgba(255,255,255,.76);border-radius:22px;padding:16px 6px;box-shadow:0 10px 25px rgba(190,40,95,.12)}.num{font-size:1.7rem;font-weight:950}.label{font-size:.78rem;opacity:.82;font-weight:700}.section-card{background:rgba(255,255,255,.65);border-radius:30px;padding:20px;margin:24px 0;box-shadow:0 15px 35px rgba(190,40,95,.12);backdrop-filter:blur(10px)}.gallery{columns:2 250px;column-gap:14px;margin-top:18px}.polaroid{break-inside:avoid;background:white;padding:10px 10px 34px;border-radius:20px;margin:0 0 14px;box-shadow:0 12px 28px rgba(111,20,58,.18);transform:rotate(var(--tilt))}.polaroid img{width:100%;display:block;border-radius:14px;object-fit:cover}.polaroid small{display:block;text-align:center;margin-top:10px;color:#7b2a4b;font-weight:800}.placeholder{text-align:center;padding:28px;border-radius:24px;background:rgba(255,255,255,.7);font-weight:800}.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}.reason{background:white;border-radius:24px;padding:18px;min-height:110px;box-shadow:0 10px 25px rgba(190,40,95,.10);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800}details{background:white;border-radius:24px;margin:12px 0;padding:18px;box-shadow:0 10px 25px rgba(190,40,95,.10)}summary{cursor:pointer;list-style:none;font-weight:950}.secret{text-align:center;padding-bottom:60px}.heart{position:fixed;top:-40px;z-index:1;pointer-events:none;animation:fall linear forwards}@keyframes fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}@media(max-width:520px){h1{font-size:2.05rem}.num{font-size:1.35rem}main{padding:18px}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#fff1f7,#ffd0e2,#fff7fb);color:#4d1230;overflow-x:hidden}
+#lock{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px;text-align:center}
+.card{width:100%;max-width:430px;background:rgba(255,255,255,.78);border-radius:34px;padding:30px 22px;box-shadow:0 20px 55px rgba(170,35,90,.22);backdrop-filter:blur(14px)}
+.lock{font-size:62px;animation:pulse 1.6s infinite}@keyframes pulse{50%{transform:scale(1.12)}}
+h1{font-size:2.15rem;margin:12px 0;letter-spacing:-1px}p{line-height:1.6}
+input{width:100%;padding:15px;border:0;border-radius:999px;text-align:center;margin-top:15px;font-size:1rem}
+button{width:100%;padding:15px;border:0;border-radius:999px;background:linear-gradient(135deg,#ff4f91,#ff8aba);color:white;font-weight:900;font-size:1rem;margin-top:13px;box-shadow:0 12px 25px rgba(255,79,145,.35)}
+#error{color:#b00040;font-weight:800;min-height:22px}
+main{display:none;position:relative;z-index:2}
+.top{padding:26px 18px 10px;text-align:center}
+.badge{display:inline-block;background:rgba(255,255,255,.75);padding:8px 15px;border-radius:999px;font-weight:900;box-shadow:0 8px 20px rgba(160,30,85,.12)}
+.title{font-size:2.35rem;font-weight:950;margin:16px 0 6px}
+.subtitle{max-width:620px;margin:0 auto;color:#6d2849}
+.storybar{display:flex;gap:14px;overflow-x:auto;padding:18px 14px 22px;scroll-snap-type:x mandatory}
+.story{min-width:82px;text-align:center;scroll-snap-align:start}
+.ring{width:76px;height:76px;border-radius:50%;padding:4px;background:linear-gradient(135deg,#ff2f87,#ffcf4d,#ff72b6);display:flex;align-items:center;justify-content:center}
+.ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #fff}
+.story span{display:block;font-size:.78rem;font-weight:800;margin-top:6px}
+.feed{max-width:520px;margin:0 auto;padding:0 12px 90px}
+.post{background:rgba(255,255,255,.86);border-radius:28px;margin:18px 0;box-shadow:0 16px 38px rgba(125,24,70,.16);overflow:hidden}
+.posthead{display:flex;align-items:center;gap:10px;padding:14px}
+.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#ff4f91,#ffd1e3);display:flex;align-items:center;justify-content:center;font-size:20px}
+.name{font-weight:950}.loc{font-size:.78rem;opacity:.7;font-weight:700}
+.post img{width:100%;display:block;max-height:640px;object-fit:cover;background:#fff0f6}
+.actions{display:flex;gap:12px;font-size:25px;padding:12px 14px 4px}
+.caption{padding:0 14px 18px;line-height:1.5}.caption b{font-weight:950}
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px 14px 18px}
+.timebox{background:#fff;border-radius:18px;padding:10px 4px;text-align:center}.num{font-weight:950;font-size:1.25rem}.label{font-size:.72rem;font-weight:800;opacity:.72}
+.letters{max-width:520px;margin:0 auto 80px;padding:0 12px}
+.letter{background:white;border-radius:25px;padding:18px;margin:12px 0;box-shadow:0 12px 30px rgba(125,24,70,.13)}
+summary{font-weight:950;cursor:pointer;list-style:none}
+.heart{position:fixed;top:-35px;z-index:1;pointer-events:none;animation:fall linear forwards}@keyframes fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}
+@media(max-width:520px){.title{font-size:2rem}.feed{padding-left:10px;padding-right:10px}}
 </style>
 </head>
 <body>
-<section id="lockScreen"><div class="glass"><div class="lock-heart">🔐💗</div><h1>For my favourite girl</h1><p>This little love page is only for you. Enter the password to open it.</p><input id="passwordInput" type="password" placeholder="Enter password" /><button onclick="unlock()">Unlock my heart</button><p id="error"></p></div></section>
+<section id="lock"><div class="card"><div class="lock">🔐💗</div><h1>Private Love Page</h1><p>Only one person gets the password to this little scrapbook.</p><input id="pass" type="password" placeholder="Enter password"><button onclick="unlock()">Unlock scrapbook</button><p id="error"></p></div></section>
+
 <main id="site">
-<section class="hero"><div class="badge">Made with love by Masa 💌</div><h1>Hi, beautiful 💕</h1><p>I made this little space just for you. A place full of hearts, memories, and reminders of how special you are to me.</p><div class="timer"><div class="timebox"><div class="num" id="days">0</div><div class="label">days</div></div><div class="timebox"><div class="num" id="hours">0</div><div class="label">hours</div></div><div class="timebox"><div class="num" id="mins">0</div><div class="label">minutes</div></div><div class="timebox"><div class="num" id="secs">0</div><div class="label">seconds</div></div></div></section>
-<section class="section-card"><h2>Our little photo wall 📸</h2><p>Upload photos into a folder called <b>images</b> in your GitHub repo. This page will load them automatically.</p><div id="gallery" class="gallery"></div><div id="galleryEmpty" class="placeholder">No photos found yet. Add photos inside an <b>images</b> folder on GitHub 💕</div></section>
-<section class="section-card"><h2>Reasons I adore you ❤️</h2><div class="reasons"><div class="reason">Your smile makes everything softer.</div><div class="reason">You make ordinary moments feel special.</div><div class="reason">You have a beautiful heart.</div><div class="reason">Being around you feels like peace.</div></div></section>
-<section class="section-card"><h2>Open these love letters 💌</h2><details><summary>Letter 1 — tap me</summary><p>You are honestly one of the sweetest parts of my life. I hope this reminds you how much you mean to me.</p></details><details><summary>Letter 2 — tap me</summary><p>I love the little things about you — your laugh, your energy, your softness, and the way you make me feel.</p></details><details><summary>Letter 3 — tap me</summary><p>No matter how simple this page is, it was made with real love and real intention.</p></details></section>
-<section class="section-card secret"><h2>Press when you need a reminder 🥹</h2><button onclick="showReminder()">Open reminder</button><p id="reminder" class="hidden">You are loved, appreciated, and so special to me. I hope this page makes you smile every time you open it 💗</p></section>
+<section class="top">
+<div class="badge">Made with love by Masa 💌</div>
+<div class="title">Our Love Scrapbook 💕</div>
+<p class="subtitle">A little Instagram-style page for memories, soft moments, and reminders of how special you are.</p>
+</section>
+
+<section class="storybar">
+<div class="story"><div class="ring"><img src="photo1.JPG" onerror="this.src='photo1.jpg'"></div><span>smile</span></div>
+<div class="story"><div class="ring"><img src="photo2.JPG" onerror="this.src='photo2.jpg'"></div><span>cute</span></div>
+<div class="story"><div class="ring"><img src="photo3.JPG" onerror="this.src='photo3.jpg'"></div><span>memory</span></div>
+<div class="story"><div class="ring"><img src="photo4.JPG" onerror="this.src='photo4.jpg'"></div><span>us</span></div>
+<div class="story"><div class="ring"><span style="font-size:32px">💌</span></div><span>letter</span></div>
+</section>
+
+<section class="feed">
+<article class="post">
+<div class="posthead"><div class="avatar">💗</div><div><div class="name">for you</div><div class="loc">from Masa</div></div></div>
+<img src="photo1.JPG" onerror="this.src='photo1.jpg'">
+<div class="actions">❤️ 💬 ✨</div>
+<div class="caption"><b>Masa</b> Your smile makes everything feel softer. I hope this page makes you feel loved every time you open it.</div>
+</article>
+
+<article class="post">
+<div class="posthead"><div class="avatar">🌸</div><div><div class="name">little memory</div><div class="loc">saved forever</div></div></div>
+<img src="photo2.JPG" onerror="this.src='photo2.jpg'">
+<div class="actions">❤️ 💌 🌙</div>
+<div class="caption"><b>Masa</b> Some people make ordinary moments feel special. You are one of those people.</div>
+</article>
+
+<article class="post">
+<div class="posthead"><div class="avatar">💕</div><div><div class="name">beautiful moment</div><div class="loc">heart archive</div></div></div>
+<img src="photo3.JPG" onerror="this.src='photo3.jpg'">
+<div class="actions">❤️ ✨ 🥹</div>
+<div class="caption"><b>Masa</b> I made this because you deserve little reminders that you are appreciated and adored.</div>
+</article>
+
+<article class="post">
+<div class="posthead"><div class="avatar">💖</div><div><div class="name">favourite girl</div><div class="loc">private page</div></div></div>
+<img src="photo4.JPG" onerror="this.src='photo4.jpg'">
+<div class="actions">❤️ 🌸 💫</div>
+<div class="caption"><b>Masa</b> This is your little corner of the internet, made with real intention.</div>
+<div class="timer">
+<div class="timebox"><div class="num" id="days">0</div><div class="label">days</div></div>
+<div class="timebox"><div class="num" id="hours">0</div><div class="label">hours</div></div>
+<div class="timebox"><div class="num" id="mins">0</div><div class="label">mins</div></div>
+<div class="timebox"><div class="num" id="secs">0</div><div class="label">secs</div></div>
+</div>
+</article>
+</section>
+
+<section class="letters">
+<div class="letter"><details><summary>💌 Open letter one</summary><p>You are honestly one of the sweetest parts of my life. This page is small, but the thought behind it is real.</p></details></div>
+<div class="letter"><details><summary>💌 Open letter two</summary><p>I love the little things about you — your laugh, your energy, your softness, and the way you make moments feel warm.</p></details></div>
+<div class="letter"><details><summary>🥹 Press when you need reassurance</summary><p>You are loved, appreciated, and special to me. I hope this reminds you that you matter more than you know.</p></details></div>
+</section>
 </main>
+
 <script>
 const PASSWORD="love123";
 const START_DATE="2026-01-01";
-const GITHUB_USERNAME="masamhango56-oss";
-const REPO_NAME="Our-Love";
-const BRANCH="main";
-const IMAGE_FOLDER="images";
-function unlock(){const input=document.getElementById("passwordInput").value;if(input===PASSWORD){document.getElementById("lockScreen").style.display="none";document.getElementById("site").style.display="block"}else{document.getElementById("error").innerText="Wrong password 😭 try again"}}
+function unlock(){if(document.getElementById("pass").value===PASSWORD){document.getElementById("lock").style.display="none";document.getElementById("site").style.display="block"}else{document.getElementById("error").innerText="Wrong password 😭 try again"}}
 function updateTimer(){const start=new Date(START_DATE+"T00:00:00");const now=new Date();const diff=Math.max(0,now-start);document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));document.getElementById("hours").innerText=Math.floor((diff/(1000*60*60))%24);document.getElementById("mins").innerText=Math.floor((diff/(1000*60))%60);document.getElementById("secs").innerText=Math.floor((diff/1000)%60)}
-function showReminder(){document.getElementById("reminder").classList.remove("hidden")}
-async function loadPhotos(){const gallery=document.getElementById("gallery");const empty=document.getElementById("galleryEmpty");const apiUrl=`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${IMAGE_FOLDER}?ref=${BRANCH}`;try{const res=await fetch(apiUrl);if(!res.ok)throw new Error("No images folder found");const files=await res.json();const imageFiles=files.filter(file=>{const name=file.name.toLowerCase();return file.type==="file"&&(name.endsWith(".jpg")||name.endsWith(".jpeg")||name.endsWith(".png")||name.endsWith(".gif")||name.endsWith(".webp")||name.endsWith(".heic")||name.endsWith(".heif"))});if(imageFiles.length===0)return;empty.style.display="none";gallery.innerHTML="";imageFiles.forEach((file,index)=>{const card=document.createElement("div");card.className="polaroid";card.style.setProperty("--tilt",`${(Math.random()*4-2).toFixed(2)}deg`);const img=document.createElement("img");img.src=file.download_url;img.alt="Our memory";img.loading="lazy";const caption=document.createElement("small");caption.innerText=`Memory ${index+1} 💗`;card.appendChild(img);card.appendChild(caption);gallery.appendChild(card)})}catch(err){console.log("Photo loading issue:",err)}}
-setInterval(updateTimer,1000);updateTimer();loadPhotos();
-setInterval(()=>{const heart=document.createElement("div");heart.className="heart";heart.innerText=["💗","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];heart.style.left=Math.random()*100+"vw";heart.style.fontSize=(18+Math.random()*22)+"px";heart.style.animationDuration=(4+Math.random()*5)+"s";document.body.appendChild(heart);setTimeout(()=>heart.remove(),9000)},320);
+setInterval(updateTimer,1000);updateTimer();
+setInterval(()=>{const h=document.createElement("div");h.className="heart";h.innerText=["💗","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+"vw";h.style.fontSize=(18+Math.random()*20)+"px";h.style.animationDuration=(4+Math.random()*5)+"s";document.body.appendChild(h);setTimeout(()=>h.remove(),9000)},330);
 </script>
 </body>
 </html>

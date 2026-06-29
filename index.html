@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 💗</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ffd1dc, #fff0f5, #ffe6f2);
+      color: #5a1632;
+      overflow-x: hidden;
+    }
+    .screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      width: 100%;
+      max-width: 430px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 34px;
+      padding: 30px 22px;
+      box-shadow: 0 20px 50px rgba(214, 72, 128, 0.25);
+      backdrop-filter: blur(12px);
+    }
+    h1 { font-size: 2.1rem; margin: 8px 0 12px; }
+    h2 { margin-top: 38px; font-size: 1.7rem; }
+    p { line-height: 1.6; }
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 0;
+      border-radius: 999px;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 16px;
+      outline: none;
+      background: #fff;
+    }
+    button {
+      margin-top: 14px;
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, #ff4f91, #ff7ab6);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 10px 22px rgba(255,79,145,0.35);
+    }
+    #error { color: #b00040; min-height: 24px; }
+    #site { display: none; padding: 22px; max-width: 900px; margin: 0 auto; }
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      padding: 8px 15px;
+      background: rgba(255,255,255,0.75);
+      border-radius: 999px;
+      margin: 6px auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .photo {
+      min-height: 180px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(214,72,128,0.18);
+      text-align: center;
+      padding: 12px;
+      font-weight: 700;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .reason, .letter {
+      background: rgba(255,255,255,0.78);
+      padding: 18px;
+      border-radius: 24px;
+      margin: 12px 0;
+      box-shadow: 0 8px 22px rgba(214,72,128,0.12);
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    .heart {
+      position: fixed;
+      top: -30px;
+      pointer-events: none;
+      animation: fall linear forwards;
+      z-index: 0;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+    .content { position: relative; z-index: 2; }
+    .timer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .timebox {
+      background: rgba(255,255,255,0.76);
+      border-radius: 18px;
+      padding: 12px 6px;
+    }
+    .num { font-size: 1.4rem; font-weight: 900; }
+    .label { font-size: .75rem; opacity: .8; }
+    footer { text-align: center; padding: 40px 0 70px; }
+    @media (max-width: 520px) {
+      .gallery { grid-template-columns: 1fr; }
+      h1 { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="lock" class="screen">
+    <div class="card">
+      <div style="font-size:54px;">💗</div>
+      <h1>For my favourite girl</h1>
+      <p>This little page is only for you. Enter the password to open it.</p>
+      <input id="passwordInput" type="password" placeholder="Enter password" />
+      <button onclick="unlock()">Unlock my heart</button>
+      <p id="error"></p>
+    </div>
+  </div>
+
+  <main id="site" class="content">
+    <section class="hero">
+      <div class="pill">Made with love by Masa 💌</div>
+      <h1>Hi, beautiful 💕</h1>
+      <p>
+        I made this little space just for you. A place full of hearts, memories,
+        and reminders of how special you are to me.
+      </p>
+
+      <div class="timer">
+        <div class="timebox"><div class="num" id="days">0</div><div class="label">days</div></div>
+        <div class="timebox"><div class="num" id="hours">0</div><div class="label">hours</div></div>
+        <div class="timebox"><div class="num" id="mins">0</div><div class="label">minutes</div></div>
+        <div class="timebox"><div class="num" id="secs">0</div><div class="label">seconds</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Our cute memories 📸</h2>
+      <p>Replace these photo files with your own photos in the same folder.</p>
+      <div class="gallery">
+        <div class="photo"><img src="photo1.jpg" alt="Photo 1" onerror="this.parentElement.innerHTML='Add photo1.jpg 💕'"></div>
+        <div class="photo"><img src="photo2.jpg" alt="Photo 2" onerror="this.parentElement.innerHTML='Add photo2.jpg 💕'"></div>
+        <div class="photo"><img src="photo3.jpg" alt="Photo 3" onerror="this.parentElement.innerHTML='Add photo3.jpg 💕'"></div>
+        <div class="photo"><img src="photo4.jpg" alt="Photo 4" onerror="this.parentElement.innerHTML='Add photo4.jpg 💕'"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reasons I adore you ❤️</h2>
+      <div class="reason">Your smile makes everything feel softer.</div>
+      <div class="reason">You make ordinary moments feel special.</div>
+      <div class="reason">You have a beautiful heart.</div>
+      <div class="reason">Being around you feels like peace.</div>
+    </section>
+
+    <section>
+      <h2>Open these love letters 💌</h2>
+      <details class="letter">
+        <summary>Letter 1 — tap me</summary>
+        <p>You are honestly one of the sweetest parts of my life. I hope this reminds you how much you mean to me.</p>
+      </details>
+      <details class="letter">
+        <summary>Letter 2 — tap me</summary>
+        <p>I love the little things about you — your laugh, your energy, your softness, and the way you make me feel.</p>
+      </details>
+      <details class="letter">
+        <summary>Letter 3 — tap me</summary>
+        <p>No matter how simple this page is, it was made with real love and real intention.</p>
+      </details>
+    </section>
+
+    <footer>
+      <h2>Forever your biggest fan 💗</h2>
+      <p>Made just for you.</p>
+    </footer>
+  </main>
+
+  <script>
+    const PASSWORD = "love123";
+    const START_DATE = "2026-01-01";
+
+    function unlock() {
+      const input = document.getElementById("passwordInput").value;
+      if (input === PASSWORD) {
+        document.getElementById("lock").style.display = "none";
+        document.getElementById("site").style.display = "block";
+      } else {
+        document.getElementById("error").innerText = "Wrong password 😭 try again";
+      }
+    }
+
+    function updateTimer() {
+      const start = new Date(START_DATE + "T00:00:00");
+      const now = new Date();
+      const diff = Math.max(0, now - start);
+
+      document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById("mins").innerText = Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("secs").innerText = Math.floor((diff / 1000) % 60);
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = ["💗", "💕", "💖", "🌸", "✨"][Math.floor(Math.random() * 5)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (18 + Math.random() * 18) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }, 320);
+  </script>
+</body>
+</html>

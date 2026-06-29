@@ -3,148 +3,112 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>For My Bee 💗🐝</title>
+<title>Our Love Scrapbook 💗</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#fff3c9,#ffd6e7 45%,#fff7fb);color:#4d1230;overflow-x:hidden}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#fff1f7,#ffd0e2,#fff7fb);color:#4d1230;overflow-x:hidden}
 #lock{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px;text-align:center}
-.card{width:100%;max-width:430px;background:rgba(255,255,255,.82);border-radius:34px;padding:30px 22px;box-shadow:0 20px 55px rgba(170,35,90,.22);backdrop-filter:blur(14px)}
+.card{width:100%;max-width:430px;background:rgba(255,255,255,.78);border-radius:34px;padding:30px 22px;box-shadow:0 20px 55px rgba(170,35,90,.22);backdrop-filter:blur(14px)}
 .lock{font-size:62px;animation:pulse 1.6s infinite}@keyframes pulse{50%{transform:scale(1.12)}}
-h1{font-size:2.15rem;margin:12px 0;letter-spacing:-1px}
-p{line-height:1.6}
+h1{font-size:2.15rem;margin:12px 0;letter-spacing:-1px}p{line-height:1.6}
 input{width:100%;padding:15px;border:0;border-radius:999px;text-align:center;margin-top:15px;font-size:1rem}
-button{width:100%;padding:15px;border:0;border-radius:999px;background:linear-gradient(135deg,#ff4f91,#ffb703);color:white;font-weight:900;font-size:1rem;margin-top:13px;box-shadow:0 12px 25px rgba(255,79,145,.35)}
+button{width:100%;padding:15px;border:0;border-radius:999px;background:linear-gradient(135deg,#ff4f91,#ff8aba);color:white;font-weight:900;font-size:1rem;margin-top:13px;box-shadow:0 12px 25px rgba(255,79,145,.35)}
 #error{color:#b00040;font-weight:800;min-height:22px}
 main{display:none;position:relative;z-index:2}
-.top{min-height:100vh;padding:38px 18px 20px;text-align:center;display:flex;flex-direction:column;justify-content:center}
-.badge{display:inline-block;background:rgba(255,255,255,.8);padding:8px 15px;border-radius:999px;font-weight:900;box-shadow:0 8px 20px rgba(160,30,85,.12);margin:0 auto}
-.title{font-size:2.5rem;font-weight:950;margin:18px 0 8px}
-.subtitle{max-width:620px;margin:0 auto;color:#6d2849;font-weight:650}
-.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:520px;margin:26px auto 0}
-.timebox{background:rgba(255,255,255,.86);border-radius:18px;padding:12px 4px;text-align:center;box-shadow:0 10px 25px rgba(125,24,70,.12)}
-.num{font-weight:950;font-size:1.3rem}.label{font-size:.72rem;font-weight:800;opacity:.72}
-.scrapbook{max-width:560px;margin:0 auto;padding:0 14px 80px}
-.note{background:rgba(255,255,255,.9);border-radius:28px;padding:22px;margin:18px 0;box-shadow:0 16px 38px rgba(125,24,70,.14);position:relative}
-.note.pink{background:#ffe3ee}.note.yellow{background:#fff1b8}.note.white{background:#fff}
-.tape{position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);background:#ff9fbe;width:110px;height:24px;border-radius:4px;opacity:.75}
-.note h2{margin:12px 0 10px;font-size:1.6rem}
-.biglove{font-size:2.6rem;font-weight:950;line-height:1.15;margin:18px 0;color:#7b173f}
-.letters{max-width:560px;margin:0 auto 80px;padding:0 14px}
+.top{padding:26px 18px 10px;text-align:center}
+.badge{display:inline-block;background:rgba(255,255,255,.75);padding:8px 15px;border-radius:999px;font-weight:900;box-shadow:0 8px 20px rgba(160,30,85,.12)}
+.title{font-size:2.35rem;font-weight:950;margin:16px 0 6px}
+.subtitle{max-width:620px;margin:0 auto;color:#6d2849}
+.storybar{display:flex;gap:14px;overflow-x:auto;padding:18px 14px 22px;scroll-snap-type:x mandatory}
+.story{min-width:82px;text-align:center;scroll-snap-align:start}
+.ring{width:76px;height:76px;border-radius:50%;padding:4px;background:linear-gradient(135deg,#ff2f87,#ffcf4d,#ff72b6);display:flex;align-items:center;justify-content:center}
+.ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #fff}
+.story span{display:block;font-size:.78rem;font-weight:800;margin-top:6px}
+.feed{max-width:520px;margin:0 auto;padding:0 12px 90px}
+.post{background:rgba(255,255,255,.86);border-radius:28px;margin:18px 0;box-shadow:0 16px 38px rgba(125,24,70,.16);overflow:hidden}
+.posthead{display:flex;align-items:center;gap:10px;padding:14px}
+.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#ff4f91,#ffd1e3);display:flex;align-items:center;justify-content:center;font-size:20px}
+.name{font-weight:950}.loc{font-size:.78rem;opacity:.7;font-weight:700}
+.post img{width:100%;display:block;max-height:640px;object-fit:cover;background:#fff0f6}
+.actions{display:flex;gap:12px;font-size:25px;padding:12px 14px 4px}
+.caption{padding:0 14px 18px;line-height:1.5}.caption b{font-weight:950}
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px 14px 18px}
+.timebox{background:#fff;border-radius:18px;padding:10px 4px;text-align:center}.num{font-weight:950;font-size:1.25rem}.label{font-size:.72rem;font-weight:800;opacity:.72}
+.letters{max-width:520px;margin:0 auto 80px;padding:0 12px}
 .letter{background:white;border-radius:25px;padding:18px;margin:12px 0;box-shadow:0 12px 30px rgba(125,24,70,.13)}
 summary{font-weight:950;cursor:pointer;list-style:none}
-.floater{position:fixed;top:-35px;z-index:1;pointer-events:none;animation:fall linear forwards}
-@keyframes fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}
-.beePath{position:fixed;z-index:1;pointer-events:none;font-size:26px;animation:beeFly 9s linear forwards}
-@keyframes beeFly{0%{transform:translate(-10vw,20vh) rotate(0deg)}25%{transform:translate(35vw,10vh) rotate(20deg)}50%{transform:translate(80vw,40vh) rotate(-20deg)}75%{transform:translate(45vw,75vh) rotate(15deg)}100%{transform:translate(110vw,55vh) rotate(0deg);opacity:0}}
-.footer{text-align:center;padding:40px 20px 70px;font-weight:900}
-@media(max-width:520px){.title{font-size:2.05rem}.biglove{font-size:2.15rem}.num{font-size:1.15rem}}
+.heart{position:fixed;top:-35px;z-index:1;pointer-events:none;animation:fall linear forwards}@keyframes fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}
+@media(max-width:520px){.title{font-size:2rem}.feed{padding-left:10px;padding-right:10px}}
 </style>
 </head>
 <body>
-<section id="lock">
-  <div class="card">
-    <div class="lock">🔐💗🐝</div>
-    <h1>Private Love Page</h1>
-    <p>Only my bee gets the password to this little love page.</p>
-    <input id="pass" type="password" placeholder="Enter password">
-    <button onclick="unlock()">Unlock my heart</button>
-    <p id="error"></p>
-  </div>
-</section>
+<section id="lock"><div class="card"><div class="lock">🔐💗</div><h1>Private Love Page</h1><p>Only one person gets the password to this little scrapbook.</p><input id="pass" type="password" placeholder="Enter password"><button onclick="unlock()">Unlock scrapbook</button><p id="error"></p></div></section>
 
 <main id="site">
-  <section class="top">
-    <div class="badge">Made with love by Masa 💌🐝</div>
-    <div class="title">For My Bee 💕</div>
-    <p class="subtitle">A little page full of hearts, bees, soft words, and reminders of how much you mean to me.</p>
+<section class="top">
+<div class="badge">Made with love by Masa 💌</div>
+<div class="title">Our Love Scrapbook 💕</div>
+<p class="subtitle">A little Instagram-style page for memories, soft moments, and reminders of how special you are.</p>
+</section>
 
-    <div class="timer">
-      <div class="timebox"><div class="num" id="days">0</div><div class="label">days</div></div>
-      <div class="timebox"><div class="num" id="hours">0</div><div class="label">hours</div></div>
-      <div class="timebox"><div class="num" id="mins">0</div><div class="label">mins</div></div>
-      <div class="timebox"><div class="num" id="secs">0</div><div class="label">secs</div></div>
-    </div>
-  </section>
+<section class="storybar">
+<div class="story"><div class="ring"><img src="photo1.JPG" onerror="this.src='photo1.jpg'"></div><span>smile</span></div>
+<div class="story"><div class="ring"><img src="photo2.JPG" onerror="this.src='photo2.jpg'"></div><span>cute</span></div>
+<div class="story"><div class="ring"><img src="photo3.JPG" onerror="this.src='photo3.jpg'"></div><span>memory</span></div>
+<div class="story"><div class="ring"><img src="photo4.JPG" onerror="this.src='photo4.jpg'"></div><span>us</span></div>
+<div class="story"><div class="ring"><span style="font-size:32px">💌</span></div><span>letter</span></div>
+</section>
 
-  <section class="scrapbook">
-    <div class="note yellow">
-      <div class="tape"></div>
-      <h2>My Dearest Bee 🐝</h2>
-      <div class="biglove">I love you so much bee 💗</div>
-      <p>You make my world brighter just by being in it. Every little thing about you makes my heart feel full.</p>
-    </div>
+<section class="feed">
+<article class="post">
+<div class="posthead"><div class="avatar">💗</div><div><div class="name">for you</div><div class="loc">from Masa</div></div></div>
+<img src="photo1.JPG" onerror="this.src='photo1.jpg'">
+<div class="actions">❤️ 💬 ✨</div>
+<div class="caption"><b>Masa</b> Your smile makes everything feel softer. I hope this page makes you feel loved every time you open it.</div>
+</article>
 
-    <div class="note pink">
-      <div class="tape"></div>
-      <h2>You + Me ❤️</h2>
-      <p>No matter what happens, I want this to remind you that you are loved, appreciated, and special to me.</p>
-    </div>
+<article class="post">
+<div class="posthead"><div class="avatar">🌸</div><div><div class="name">little memory</div><div class="loc">saved forever</div></div></div>
+<img src="photo2.JPG" onerror="this.src='photo2.jpg'">
+<div class="actions">❤️ 💌 🌙</div>
+<div class="caption"><b>Masa</b> Some people make ordinary moments feel special. You are one of those people.</div>
+</article>
 
-    <div class="note white">
-      <div class="tape"></div>
-      <h2>My favourite person 💕</h2>
-      <p>That’s you. Always you. Forever you.</p>
-    </div>
+<article class="post">
+<div class="posthead"><div class="avatar">💕</div><div><div class="name">beautiful moment</div><div class="loc">heart archive</div></div></div>
+<img src="photo3.JPG" onerror="this.src='photo3.jpg'">
+<div class="actions">❤️ ✨ 🥹</div>
+<div class="caption"><b>Masa</b> I made this because you deserve little reminders that you are appreciated and adored.</div>
+</article>
 
-    <div class="note yellow">
-      <div class="tape"></div>
-      <h2>Little reminder 🥹</h2>
-      <p>You are my today, my tomorrow, and one of the sweetest parts of my life.</p>
-    </div>
-  </section>
+<article class="post">
+<div class="posthead"><div class="avatar">💖</div><div><div class="name">favourite girl</div><div class="loc">private page</div></div></div>
+<img src="photo4.JPG" onerror="this.src='photo4.jpg'">
+<div class="actions">❤️ 🌸 💫</div>
+<div class="caption"><b>Masa</b> This is your little corner of the internet, made with real intention.</div>
+<div class="timer">
+<div class="timebox"><div class="num" id="days">0</div><div class="label">days</div></div>
+<div class="timebox"><div class="num" id="hours">0</div><div class="label">hours</div></div>
+<div class="timebox"><div class="num" id="mins">0</div><div class="label">mins</div></div>
+<div class="timebox"><div class="num" id="secs">0</div><div class="label">secs</div></div>
+</div>
+</article>
+</section>
 
-  <section class="letters">
-    <div class="letter"><details><summary>💌 Open letter one</summary><p>I love you so much bee. I hope this page makes you smile every time you open it.</p></details></div>
-    <div class="letter"><details><summary>💌 Open letter two</summary><p>I love the little things about you — your laugh, your energy, your softness, and the way you make moments feel warm.</p></details></div>
-    <div class="letter"><details><summary>🥹 Press when you need reassurance</summary><p>You are loved, appreciated, and so special to me. I hope this reminds you that you matter more than you know.</p></details></div>
-  </section>
-
-  <div class="footer">Thank you for being my everything 💗🐝</div>
+<section class="letters">
+<div class="letter"><details><summary>💌 Open letter one</summary><p>You are honestly one of the sweetest parts of my life. This page is small, but the thought behind it is real.</p></details></div>
+<div class="letter"><details><summary>💌 Open letter two</summary><p>I love the little things about you — your laugh, your energy, your softness, and the way you make moments feel warm.</p></details></div>
+<div class="letter"><details><summary>🥹 Press when you need reassurance</summary><p>You are loved, appreciated, and special to me. I hope this reminds you that you matter more than you know.</p></details></div>
+</section>
 </main>
 
 <script>
 const PASSWORD="love123";
 const START_DATE="2026-01-01";
-
-function unlock(){
-  if(document.getElementById("pass").value===PASSWORD){
-    document.getElementById("lock").style.display="none";
-    document.getElementById("site").style.display="block";
-  }else{
-    document.getElementById("error").innerText="Wrong password 😭 try again";
-  }
-}
-
-function updateTimer(){
-  const start=new Date(START_DATE+"T00:00:00");
-  const now=new Date();
-  const diff=Math.max(0,now-start);
-  document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));
-  document.getElementById("hours").innerText=Math.floor((diff/(1000*60*60))%24);
-  document.getElementById("mins").innerText=Math.floor((diff/(1000*60))%60);
-  document.getElementById("secs").innerText=Math.floor((diff/1000)%60);
-}
+function unlock(){if(document.getElementById("pass").value===PASSWORD){document.getElementById("lock").style.display="none";document.getElementById("site").style.display="block"}else{document.getElementById("error").innerText="Wrong password 😭 try again"}}
+function updateTimer(){const start=new Date(START_DATE+"T00:00:00");const now=new Date();const diff=Math.max(0,now-start);document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));document.getElementById("hours").innerText=Math.floor((diff/(1000*60*60))%24);document.getElementById("mins").innerText=Math.floor((diff/(1000*60))%60);document.getElementById("secs").innerText=Math.floor((diff/1000)%60)}
 setInterval(updateTimer,1000);updateTimer();
-
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="floater";
-  h.innerText=["💗","💕","💖","❤️","🌸","✨","🐝"][Math.floor(Math.random()*7)];
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(18+Math.random()*20)+"px";
-  h.style.animationDuration=(4+Math.random()*5)+"s";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),9000);
-},260);
-
-setInterval(()=>{
-  const bee=document.createElement("div");
-  bee.className="beePath";
-  bee.innerText="🐝";
-  bee.style.top=(Math.random()*55+10)+"vh";
-  document.body.appendChild(bee);
-  setTimeout(()=>bee.remove(),9500);
-},3500);
+setInterval(()=>{const h=document.createElement("div");h.className="heart";h.innerText=["💗","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+"vw";h.style.fontSize=(18+Math.random()*20)+"px";h.style.animationDuration=(4+Math.random()*5)+"s";document.body.appendChild(h);setTimeout(()=>h.remove(),9000)},330);
 </script>
 </body>
 </html>
